@@ -30,9 +30,11 @@ public class SanduicheBuilder implements Builder<SanduicheBuilder,Sanduiche>{
     @Override
     public Sanduiche create() {
         var sanduiche = new Sanduiche();
+
         sanduiche.setRecheio(this.recheio);
         sanduiche.setMolho(this.molho);
         sanduiche.setExtra(this.extra);
+        sanduiche.setTipoDePao(this.tipoDePao);
 
         return sanduiche;
     }
