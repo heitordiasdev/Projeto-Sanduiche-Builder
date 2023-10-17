@@ -1,5 +1,8 @@
 package br.edu.catolica.es.subway;
 
+import java.util.Collections;
+import java.util.List;
+
 public class SanduicheBuilder implements Builder<SanduicheBuilder,Sanduiche>{
 
     private final String tipoDePao;
@@ -16,8 +19,8 @@ public class SanduicheBuilder implements Builder<SanduicheBuilder,Sanduiche>{
     }
 
     @Override
-    public SanduicheBuilder molho(String molho) {
-        this.molho = molho;
+    public SanduicheBuilder molho(List<String> molhos) {
+        this.molho = molhos.toString();
         return this;
     }
 
@@ -32,7 +35,7 @@ public class SanduicheBuilder implements Builder<SanduicheBuilder,Sanduiche>{
         var sanduiche = new Sanduiche();
 
         sanduiche.setRecheio(this.recheio);
-        sanduiche.setMolho(this.molho);
+        sanduiche.setMolhos(Collections.singletonList(this.molho));
         sanduiche.setExtra(this.extra);
         sanduiche.setTipoDePao(this.tipoDePao);
 
